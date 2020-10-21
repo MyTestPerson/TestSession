@@ -74,11 +74,6 @@ public class HomeController {
     }
 
 
-
-
-
-
-
     @GetMapping(value = "/allUser")
     public ModelAndView allUser () {
 
