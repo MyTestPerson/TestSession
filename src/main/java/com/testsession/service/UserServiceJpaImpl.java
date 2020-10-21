@@ -11,6 +11,9 @@ import javax.transaction.Transactional;
 public class UserServiceJpaImpl implements UserServiceJpa {
 
 
+    private final
+    UserRepository userRepository;
+
     public UserServiceJpaImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

@@ -6,6 +6,10 @@ import java.io.Serializable;
 @Entity(name = "User")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
+    private Long id;
 
 
     @Column(name = "password", length = 45)

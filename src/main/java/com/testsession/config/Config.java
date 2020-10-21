@@ -17,7 +17,19 @@ import java.util.Properties;
 public class Config implements WebMvcConfigurer{
 
 
+    @Bean
+    public FreeMarkerConfigurer freeMarkerConfigurer() {
+        FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
+        configurer.setTemplateLoaderPath("/WEB-INF/templates");
+        configurer.setDefaultEncoding("UTF-8");
 
+        Properties properties =  new Properties();
+        properties.setProperty("default_encoding", "UTF-8");
+
+        configurer.setFreemarkerSettings(properties);
+
+        return configurer;
+    }
 
     @Bean
     public ViewResolver getViewResolver(){

@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
+    private final
+    UserDetailsService userDetailsService;
 
 
     private final
