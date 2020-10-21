@@ -19,11 +19,11 @@ public class ActiveUserService {
 
     public List<String > getAllActiveUser(){
 
-
         List<Object> principals = sessionRegistry.getAllPrincipals();
         User[] users = (User[]) principals.toArray(new User[0]);
 
-        return Arrays.stream(users).filter(user -> !sessionRegistry.getAllSessions(user, false)
+        return Arrays.stream(users)
+                .filter(user -> !sessionRegistry.getAllSessions(user, false)
                 .isEmpty()).map(User::getUsername).collect(Collectors.toList());
 
     }

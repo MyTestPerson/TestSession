@@ -26,33 +26,22 @@ public class HomeController {
     ActiveUserService activeUserService;
 
 
-
-
-
     @GetMapping(value = "/")
-    public String home () {
-
+    public String homePage () {
             return "/home";
-
     }
 
 
-
     @GetMapping(value = "/login")
-    public String loginGet () {
+    public String loginPageGet () {
         return "/login";
     }
 
 
     @PostMapping(value = "/login")
     public String loginPost () {
-        return "/login";
+        return "redirect:/";
     }
-
-
-
-
-
 
 
     @GetMapping(value = "/user")
@@ -63,11 +52,8 @@ public class HomeController {
 
     @PostMapping("/user")
     public String addUserPost(@ModelAttribute("user") User user){
-
         userServiceJpa.save(user);
-
         return "redirect:/user";
-
     }
 
 
@@ -80,7 +66,6 @@ public class HomeController {
         return new ModelAndView("/allUser", "user", users);
 
     }
-
 
 
 }
