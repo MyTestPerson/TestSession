@@ -22,19 +22,20 @@ User
 
 <br>
 <br>
-<form method="post" action="/logout">
-    <button type="submit">Exit</button>
-</form>
-
-<br>
-<br>
 
 <a href="/allUser"><button type="submit" >All User</button></a>
 
 <br>
 <br>
-
 <a href="/"><button type="submit" >Home</button></a>
+
+<br>
+<br>
+
+<form method="post" action="/logout">
+    <button type="submit">Exit</button>
+</form>
+
 
 </body>
 </html>

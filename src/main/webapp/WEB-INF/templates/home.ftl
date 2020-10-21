@@ -11,13 +11,11 @@
 <br>
 <br>
 
-
-<a href="/login"><b>Log in</b></a><br>
+<a href="/user"><b>USER</b></a><br>
 
 <br>
 
-<a href="/user"><b>USER</b></a><br>
-
+<a href="/login"><b>Log in</b></a><br>
 
 
 </body>
