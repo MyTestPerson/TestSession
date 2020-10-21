@@ -56,10 +56,7 @@ public class HomeController {
 
 
     @GetMapping(value = "/user")
-    public String addUserPage (Model model) {
-
-        model.addAttribute("user", new User());
-
+    public String addUserPage () {
         return "/user";
     }
 
