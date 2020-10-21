@@ -2,7 +2,6 @@ package com.testsession.security;
 
 import com.testsession.model.User;
 import com.testsession.service.UserServiceJpa;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,8 +17,12 @@ import java.util.List;
 public class UserDetail implements UserDetailsService {
 
 
-    @Autowired
+    private final
     UserServiceJpa userServiceJpa;
+
+    public UserDetail(UserServiceJpa userServiceJpa) {
+        this.userServiceJpa = userServiceJpa;
+    }
 
 
     @Override

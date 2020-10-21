@@ -3,7 +3,6 @@ package com.testsession.controller;
 import com.testsession.model.User;
 import com.testsession.service.ActiveUserService;
 import com.testsession.service.UserServiceJpa;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,12 +16,17 @@ import java.util.stream.Collectors;
 public class HomeController {
 
 
-    @Autowired
+    private final
     UserServiceJpa userServiceJpa;
 
 
-    @Autowired
+    private final
     ActiveUserService activeUserService;
+
+    public HomeController(UserServiceJpa userServiceJpa, ActiveUserService activeUserService) {
+        this.userServiceJpa = userServiceJpa;
+        this.activeUserService = activeUserService;
+    }
 
 
     @GetMapping(value = "/")

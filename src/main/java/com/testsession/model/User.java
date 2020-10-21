@@ -2,8 +2,6 @@ package com.testsession.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-
 
 @Entity(name = "User")
 public class User implements Serializable {

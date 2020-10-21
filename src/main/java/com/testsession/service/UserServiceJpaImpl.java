@@ -2,7 +2,6 @@ package com.testsession.service;
 
 import com.testsession.model.User;
 import com.testsession.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -12,8 +11,12 @@ import javax.transaction.Transactional;
 public class UserServiceJpaImpl implements UserServiceJpa {
 
 
-    @Autowired
+    private final
     UserRepository userRepository;
+
+    public UserServiceJpaImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
 
     @Override
