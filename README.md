@@ -1,12 +1,10 @@
 # Session
 
-**База данных в корне testsession.sql**
+**testsession.sql**
 
-Там два пользователя
+User **user** password **{noop}1111**
 
-Пользователь **user** пароь **{noop}1111**
-
-Пользователь **roma** пароль **{noop}1111**
+User **roma** password **{noop}1111**
 
 
 
