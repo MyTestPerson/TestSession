@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Service
-public class UserDetail implements UserDetailsService {
+public class UserDetail implements  {
 
 
     private final

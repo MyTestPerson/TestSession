@@ -23,10 +23,6 @@ public class HomeController {
     private final
     ActiveUserService activeUserService;
 
-    public HomeController(UserServiceJpa userServiceJpa, ActiveUserService activeUserService) {
-        this.userServiceJpa = userServiceJpa;
-        this.activeUserService = activeUserService;
-    }
 
 
     @GetMapping(value = "/")
