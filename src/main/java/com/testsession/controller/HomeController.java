@@ -56,7 +56,7 @@ public class HomeController {
 
 
     @GetMapping(value = "/user")
-    public String addUser (Model model) {
+    public String addUserPage (Model model) {
 
         model.addAttribute("user", new User());
 
@@ -65,7 +65,7 @@ public class HomeController {
 
 
     @PostMapping("/user")
-    public String registrationUserPost(@ModelAttribute("user") User user){
+    public String addUserPost(@ModelAttribute("user") User user){
 
         userServiceJpa.save(user);
 
