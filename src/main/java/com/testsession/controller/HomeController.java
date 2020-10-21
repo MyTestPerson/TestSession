@@ -57,7 +57,7 @@ public class HomeController {
 
 
     @GetMapping(value = "/allUser")
-    public ModelAndView allUser () {
+    public ModelAndView AllUserPage () {
 
         List<String > allActiveUsers = activeUserService.getAllActiveUser();
         Iterable<User> users = allActiveUsers.stream().map(User::new).collect(Collectors.toList());
