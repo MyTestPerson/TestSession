@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class ActiveUserService {
 
+
     @Autowired
     SessionRegistry sessionRegistry;
 

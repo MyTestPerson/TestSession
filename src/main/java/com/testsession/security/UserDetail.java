@@ -1,6 +1,5 @@
 package com.testsession.security;
 
-
 import com.testsession.model.User;
 import com.testsession.service.UserServiceJpa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,7 @@ import java.util.List;
 
 @Service
 public class UserDetail implements UserDetailsService {
+
 
     @Autowired
     UserServiceJpa userServiceJpa;

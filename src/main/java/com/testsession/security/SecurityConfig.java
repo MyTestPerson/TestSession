@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
     @Autowired
     UserDetailsService userDetailsService;
 
@@ -21,13 +22,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     SessionRegistry sessionRegistry;
 
 
-
-
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-
         auth.userDetailsService(userDetailsService);
     }
 
@@ -37,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-
 
                 .mvcMatchers("/").permitAll()
                 .mvcMatchers("/login").anonymous()

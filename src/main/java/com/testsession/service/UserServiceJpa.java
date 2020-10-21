@@ -8,5 +8,4 @@ public interface UserServiceJpa {
 
     User findByUsername(String username);
 
-
 }

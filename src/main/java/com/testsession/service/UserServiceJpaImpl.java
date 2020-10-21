@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 @Transactional
 public class UserServiceJpaImpl implements UserServiceJpa {
 
+
     @Autowired
     UserRepository userRepository;
 
@@ -20,12 +21,10 @@ public class UserServiceJpaImpl implements UserServiceJpa {
         userRepository.save(user);
     }
 
+
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
-
-
-
 
 }
