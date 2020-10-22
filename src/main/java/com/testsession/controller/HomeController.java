@@ -2,10 +2,8 @@ package com.testsession.controller;
 
 import com.testsession.model.User;
 import com.testsession.service.ActiveUserService;
-import com.testsession.service.UserServiceJpa;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,16 +13,10 @@ import java.util.stream.Collectors;
 @Controller
 public class HomeController {
 
-
-    private final
-    UserServiceJpa userServiceJpa;
-
-
     private final
     ActiveUserService activeUserService;
 
-    public HomeController(UserServiceJpa userServiceJpa, ActiveUserService activeUserService) {
-        this.userServiceJpa = userServiceJpa;
+    public HomeController(ActiveUserService activeUserService) {
         this.activeUserService = activeUserService;
     }
 
@@ -48,26 +40,12 @@ public class HomeController {
 
 
     @GetMapping(value = "/user")
-    public String addUserPage () {
-        return "/user";
-    }
-
-
-    @PostMapping("/user")
-    public String addUserPost(@ModelAttribute("user") User user){
-        userServiceJpa.save(user);
-        return "redirect:/user";
-    }
-
-
-    @GetMapping(value = "/allUser")
-    public ModelAndView AllUserPage () {
+    public ModelAndView addUserPage () {
 
         List<String > allActiveUsers = activeUserService.getAllActiveUser();
         Iterable<User> users = allActiveUsers.stream().map(User::new).collect(Collectors.toList());
 
-        return new ModelAndView("/allUser", "user", users);
-
+        return new ModelAndView("/user", "user", users);
     }
 
 

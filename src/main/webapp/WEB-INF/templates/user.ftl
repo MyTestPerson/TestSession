@@ -5,28 +5,14 @@
     <title>User</title>
 </head>
 <body>
-User
-<br>
-<br>
-<br>
-
-<form name="user" action="/user" method="post">
-
-    <input type="text" name="username" placeholder="User Name"/><br>
-
-    <input type="password" name="password" placeholder="User Password"/><br>
-
-    <button type="submit" id="submit">Add User</button>
-
-</form>
+Active
+<#list user as user>
+    <b>${user.username}</b>
+</#list>
 
 <br>
 <br>
 
-<a href="/allUser"><button type="submit" >All User</button></a>
-
-<br>
-<br>
 <a href="/"><button type="submit" >Home</button></a>
 
 <br>

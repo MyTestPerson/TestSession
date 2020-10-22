@@ -5,30 +5,27 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.session.SessionRegistry;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-
-    private final
-    UserDetailsService userDetailsService;
-
-
     private final
     SessionRegistry sessionRegistry;
 
-    public SecurityConfig(UserDetailsService userDetailsService, SessionRegistry sessionRegistry) {
-        this.userDetailsService = userDetailsService;
+    public SecurityConfig(SessionRegistry sessionRegistry) {
         this.sessionRegistry = sessionRegistry;
     }
 
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        auth.inMemoryAuthentication()
+                .withUser("user").password("{noop}1111").roles("USER")
+                .and()
+                .withUser("roma").password("{noop}1111").roles("USER");
     }
 
 
@@ -60,10 +57,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
 
-                .and().sessionManagement()
+                .and().sessionManagement().enableSessionUrlRewriting(true)
+                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .maximumSessions(1)
                 .expiredUrl("/login")
-                .sessionRegistry(sessionRegistry);
+                .sessionRegistry(sessionRegistry)
+                .and().sessionFixation().none();
 
     }
 
