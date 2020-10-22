@@ -23,9 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user").password("{noop}1111").roles("USER")
+                .withUser("user").password("{noop}1111").roles("ADMIN")
                 .and()
-                .withUser("roma").password("{noop}1111").roles("USER");
+                .withUser("roma").password("{noop}1111").roles("ADMIN");
     }
 
 
@@ -37,27 +37,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .mvcMatchers("/").permitAll()
                 .mvcMatchers("/login").anonymous()
-                .mvcMatchers("/user", "/allUser").hasAnyRole("ADMIN", "USER")
+                .mvcMatchers("/user").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
-
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/login")
-
                 .defaultSuccessUrl("/")
-
                 .and().csrf().disable()
-
                 .logout()
                 .permitAll()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
-
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
 
-                .and().sessionManagement().enableSessionUrlRewriting(true)
+                .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .maximumSessions(1)
                 .expiredUrl("/login")
