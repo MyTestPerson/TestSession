@@ -43,7 +43,8 @@ public class HomeController {
     public ModelAndView addUserPage () {
 
         List<String > allActiveUsers = activeUserService.getAllActiveUser();
-        Iterable<User> users = allActiveUsers.stream().map(User::new).collect(Collectors.toList());
+        Iterable<User> users = allActiveUsers
+                .stream().map(User::new).collect(Collectors.toList());
 
         return new ModelAndView("/user", "user", users);
     }
