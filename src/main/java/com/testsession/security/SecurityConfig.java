@@ -40,20 +40,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/")
                 .and().csrf().disable()
                 .logout()
                 .permitAll()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
 
                 .and().sessionManagement()
                 .maximumSessions(1)
-                .expiredUrl("/login")
                 .sessionRegistry(sessionRegistry)
                 .and().sessionFixation().none();
 
