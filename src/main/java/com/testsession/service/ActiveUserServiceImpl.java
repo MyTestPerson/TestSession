@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ActiveUserServiceImpl implements ActiveUserService, HttpSessionBindingListener {
+public class ActiveUserServiceImpl implements ActiveUserService {
 
     private final
     SessionRegistry sessionRegistry;
