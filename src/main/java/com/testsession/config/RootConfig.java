@@ -14,9 +14,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan({"com.testsession.security", "com.testsession.service"})
 public class RootConfig {
 
-    @Bean
-    SessionRegistry sessionRegistry(){
-        return new SessionRegistryImpl();
-    }
+
 
 }

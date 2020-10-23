@@ -4,10 +4,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public final class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    @Override
-    protected final Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{ RootConfig.class };
-    }
 
     @Override
     protected final Class<?>[] getServletConfigClasses() {

@@ -11,12 +11,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class ActiveUserServiceImpl implements ActiveUserService, HttpSessionBindingListener {
-
-    private final
-    SessionRegistry sessionRegistry;
-
-    public ActiveUserServiceImpl(SessionRegistry sessionRegistry) {
-        this.sessionRegistry = sessionRegistry;
+nRegistry = sessionRegistry;
     }
 
 
