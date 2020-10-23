@@ -5,7 +5,7 @@ import org.springframework.web.WebApplicationInitializer;
 
 import javax.servlet.ServletContext;
 
-public class MyWebAppInitializer implements WebApplicationInitializer {
+public class AppEvent implements WebApplicationInitializer {
 
     @Override
     public void onStartup(ServletContext container) {
