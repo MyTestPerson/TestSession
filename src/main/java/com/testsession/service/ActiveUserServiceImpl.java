@@ -4,13 +4,13 @@ import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSessionBindingListener;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ActiveUserServiceImpl implements ActiveUserService{
-
+public class ActiveUserServiceImpl implements ActiveUserService, HttpSessionBindingListener {
 
     private final
     SessionRegistry sessionRegistry;
@@ -30,5 +30,6 @@ public class ActiveUserServiceImpl implements ActiveUserService{
                 .isEmpty()).map(User::getUsername).collect(Collectors.toList());
 
     }
+
 
 }
