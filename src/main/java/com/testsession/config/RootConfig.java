@@ -10,8 +10,6 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-@EnableGlobalAuthentication
-
 @EnableWebMvc
 @Configuration
 @EnableWebSecurity

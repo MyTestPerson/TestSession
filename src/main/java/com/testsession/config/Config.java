@@ -23,6 +23,7 @@ public class Config implements WebMvcConfigurer{
         configurer.setTemplateLoaderPath("/WEB-INF/templates");
         configurer.setDefaultEncoding("UTF-8");
 
+
         Properties properties =  new Properties();
         properties.setProperty("default_encoding", "UTF-8");
 
