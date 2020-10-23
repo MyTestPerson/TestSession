@@ -27,6 +27,10 @@ public class HomeController {
     }
 
 
+    @GetMapping(value = "/login")
+    public String loginPageGet () {
+        return "/login";
+    }
 
 
     @PostMapping(value = "/login")

@@ -13,6 +13,13 @@ public class UserActive implements HttpSessionBindingListener {
     Logger logger = LoggerFactory.getLogger(UserActive.class);
 
     @Override
-    pu
+    public void valueBound(HttpSessionBindingEvent event) {
+        logger.error("Log in : {}", event.getName() );
+    }
+
+    @Override
+    public void valueUnbound(HttpSessionBindingEvent event) {
+        logger.error("Log out : {}", event.getName() );
+    }
 
 }

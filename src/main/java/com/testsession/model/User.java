@@ -16,7 +16,16 @@ public class User implements Serializable {
     public User() {
         super();
     }
-etId(Long id) {
+
+    public User(String username) {
+        this.username = username;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 

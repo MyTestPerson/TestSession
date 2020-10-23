@@ -9,5 +9,9 @@ import org.springframework.context.annotation.Import;
 @Import(AppInit.class)
 public class StartApp {
 
-    pub
+    public static void main(String[] args) {
+        SpringApplication.run(StartApp.class, args);
+    }
+
+
 }
